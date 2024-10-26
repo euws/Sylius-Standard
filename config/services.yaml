@@ -28,3 +28,8 @@ services:
     App\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
+
+    app.form.extension.type.cartitem:
+        class: App\Form\Extension\TestCartItemTypeExtension
+        tags:
+            - { name: form.type_extension, extended_type: Sylius\Bundle\CoreBundle\Form\Extension\CartItemTypeExtension, priority: -5 }        
